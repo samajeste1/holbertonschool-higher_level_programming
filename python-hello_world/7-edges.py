@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-str = "Holberton School"
-print(str[0:9])
-print(str[10:16])
-print(str[0:7] + str[7:16])
+word = "Holberton"
+word_first_3 = word[:3]
+word_last_2 = word[-2:]
+middle_word = word[1:-1]
+print(f"First 3 letters: {word_first_3}")
+print(f"Last 2 letters: {word_last_2}")
+print(f"Middle word: {middle_word}")
