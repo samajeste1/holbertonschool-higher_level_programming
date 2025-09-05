@@ -1,13 +1,15 @@
 #!/usr/bin/python3
-def add(a, b):
-    """My addition function"""
-    return (a + b)
-def sub(a, b):
-    """My subtraction function"""
-    return (a - b)
-def mul(a, b):
-    """My multiplication function"""
-    return (a * b)
-def div(a, b):
-    """My division function"""
-    return int(a / b)
+if __name__ == "__main__":
+    import sys
+
+    args = sys.argv[1:]
+    count = len(args)
+
+    print("{} argument{}{}".format(
+        count,
+        "" if count == 1 else "s",
+        "." if count == 0 else ":"
+    ))
+
+    for i, arg in enumerate(args, start=1):
+        print("{}: {}".format(i, arg))
