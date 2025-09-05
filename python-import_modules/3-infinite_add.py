@@ -6,4 +6,3 @@ if __name__ == "__main__":
     for x in sys.argv[1:]:
         add += int(x)
     print(add)
-    

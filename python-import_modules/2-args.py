@@ -11,4 +11,3 @@ if __name__ == "__main__":
         print(f"{len(sys.argv[1:])} arguments:")
         for x in range(len(sys.argv[1:])):
             print(f"{x + 1}: {sys.argv[x + 1]}")
-            
