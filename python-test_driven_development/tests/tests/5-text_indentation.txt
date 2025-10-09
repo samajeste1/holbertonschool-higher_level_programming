@@ -1,0 +1,22 @@
+$ cat tests/5-text_indentation.txt
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Hello. My name is John? I am fine: thank you.")
+Hello.
+
+My name is John?
+
+I am fine:
+
+thank you.
+
+>>> text_indentation("Holberton School: the best.")
+Holberton School:
+
+the best.
+
+>>> text_indentation("Python is fun.")
+Python is fun.
+
+>>> text_indentation("No punctuation here")
+No punctuation here
