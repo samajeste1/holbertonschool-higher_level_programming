@@ -1,0 +1,19 @@
+# Python - Async Function
+
+This project focuses on learning asynchronous programming in Python using asyncio.
+
+## Learning Objectives
+
+- async and await syntax
+- How to execute an async program with asyncio
+- How to run concurrent coroutines
+- How to create asyncio tasks
+- How to use the random module
+
+## Requirements
+
+- Python 3.9
+- pycodestyle (version 2.5.x)
+- All files must be executable
+- All modules and functions must have documentation
+- All functions and coroutines must be type-annotated
