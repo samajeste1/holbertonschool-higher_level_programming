@@ -7,7 +7,15 @@
       "Bash(tree:*)",
       "Bash(cat:*)",
       "Bash(python3 -c 'print(__import__(\"\"\"\"model_state\"\"\"\").__doc__)')",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git add:*)",
+      "Bash(git pull:*)",
+      "Bash(git restore:*)",
+      "Bash(git clone:*)",
+      "WebFetch(domain:data.cityofnewyork.us)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []

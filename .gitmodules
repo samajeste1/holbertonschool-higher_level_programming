@@ -1,0 +1,3 @@
+[submodule "holbertonschool-web_back_end"]
+	path = holbertonschool-web_back_end
+	url = https://github.com/samajeste1/holbertonschool-web_back_end.git
