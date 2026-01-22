@@ -1,0 +1,59 @@
+
+==================================================
+HBnB API Server
+==================================================
+
+Available routes:
+  /api/v1/ -> api.root [GET]
+  /api/v1/ -> api.api_root [GET]
+  /api/v1/amenities/ -> api.amenities_amenity_list [GET,POST]
+  /api/v1/amenities/ -> api.amenities_amenity_list_2 [GET,POST]
+  /api/v1/amenities/<string:amenity_id> -> api.amenities_amenity_resource [GET,PUT]
+  /api/v1/amenities/<string:amenity_id> -> api.amenities_amenity_resource_2 [GET,PUT]
+  /api/v1/doc/ -> api.doc [GET]
+  /api/v1/places/ -> api.places_place_list [GET,POST]
+  /api/v1/places/ -> api.places_place_list_2 [GET,POST]
+  /api/v1/places/<place_id> -> api.places_place_resource [GET,PUT]
+  /api/v1/places/<place_id> -> api.places_place_resource_2 [GET,PUT]
+  /api/v1/places/<place_id>/reviews -> api.places_place_review_list [GET]
+  /api/v1/places/<place_id>/reviews -> api.places_place_review_list_2 [GET]
+  /api/v1/reviews/ -> api.reviews_review_list [GET,POST]
+  /api/v1/reviews/ -> api.reviews_review_list_2 [GET,POST]
+  /api/v1/reviews/<review_id> -> api.reviews_review_resource [DELETE,GET,PUT]
+  /api/v1/reviews/<review_id> -> api.reviews_review_resource_2 [DELETE,GET,PUT]
+  /api/v1/swagger.json -> api.specs [GET]
+  /api/v1/users/ -> api.users_user_list [GET,POST]
+  /api/v1/users/ -> api.users_user_list_2 [GET,POST]
+  /api/v1/users/<user_id> -> api.users_user_resource [GET,PUT]
+  /api/v1/users/<user_id> -> api.users_user_resource_2 [GET,PUT]
+  /static/<path:filename> -> static [GET]
+  /swaggerui/<path:filename> -> restx_doc.static [GET]
+
+Important URLs (clickable in terminal):
+  Swagger UI:    http://127.0.0.1:5000/ (redirige vers /api/v1/doc/
+  Users API:     http://127.0.0.1:5000/api/v1/users
+  Amenities API: http://127.0.0.1:5000/api/v1/amenities
+  Health check:  http://127.0.0.1:5000/health
+
+Configuration:
+  Debug mode: True
+  Host: 0.0.0.0 (accessible from network)
+  Port: 5000
+
+==================================================
+Starting server... (Press Ctrl+C to stop)
+==================================================
+
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.14:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 198-136-137
+127.0.0.1 - - [13/Jan/2026 23:41:32] "GET /health HTTP/1.1" 404 -
+127.0.0.1 - - [13/Jan/2026 23:41:37] "POST /api/v1/amenities/ HTTP/1.1" 201 -
+127.0.0.1 - - [13/Jan/2026 23:41:52] "POST /api/v1/users/ HTTP/1.1" 201 -

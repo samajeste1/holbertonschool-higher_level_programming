@@ -1,0 +1,190 @@
+
+==================================================
+HBnB API Server
+==================================================
+
+Available routes:
+  /api/v1/ -> api.root [GET]
+  /api/v1/ -> api.api_root [GET]
+  /api/v1/amenities/ -> api.amenities_amenity_list [GET,POST]
+  /api/v1/amenities/ -> api.amenities_amenity_list_2 [GET,POST]
+  /api/v1/amenities/<string:amenity_id> -> api.amenities_amenity_resource [GET,PUT]
+  /api/v1/amenities/<string:amenity_id> -> api.amenities_amenity_resource_2 [GET,PUT]
+  /api/v1/doc/ -> api.doc [GET]
+  /api/v1/places/ -> api.places_place_list [GET,POST]
+  /api/v1/places/ -> api.places_place_list_2 [GET,POST]
+  /api/v1/places/<place_id> -> api.places_place_resource [GET,PUT]
+  /api/v1/places/<place_id> -> api.places_place_resource_2 [GET,PUT]
+  /api/v1/places/<place_id>/reviews -> api.places_place_review_list [GET]
+  /api/v1/places/<place_id>/reviews -> api.places_place_review_list_2 [GET]
+  /api/v1/reviews/ -> api.reviews_review_list [GET,POST]
+  /api/v1/reviews/ -> api.reviews_review_list_2 [GET,POST]
+  /api/v1/reviews/<review_id> -> api.reviews_review_resource [DELETE,GET,PUT]
+  /api/v1/reviews/<review_id> -> api.reviews_review_resource_2 [DELETE,GET,PUT]
+  /api/v1/swagger.json -> api.specs [GET]
+  /api/v1/users/ -> api.users_user_list [GET,POST]
+  /api/v1/users/ -> api.users_user_list_2 [GET,POST]
+  /api/v1/users/<user_id> -> api.users_user_resource [GET,PUT]
+  /api/v1/users/<user_id> -> api.users_user_resource_2 [GET,PUT]
+  /static/<path:filename> -> static [GET]
+  /swaggerui/<path:filename> -> restx_doc.static [GET]
+
+Important URLs (clickable in terminal):
+  Swagger UI:    http://127.0.0.1:5000/ (redirige vers /api/v1/doc/
+  Users API:     http://127.0.0.1:5000/api/v1/users
+  Amenities API: http://127.0.0.1:5000/api/v1/amenities
+  Health check:  http://127.0.0.1:5000/health
+
+Configuration:
+  Debug mode: True
+  Host: 0.0.0.0 (accessible from network)
+  Port: 5000
+
+==================================================
+Starting server... (Press Ctrl+C to stop)
+==================================================
+
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.14:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 198-136-137
+127.0.0.1 - - [13/Jan/2026 23:44:06] "POST /api/v1/users/ HTTP/1.1" 201 -
+127.0.0.1 - - [13/Jan/2026 23:44:13] "GET /api/v1/users/ HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jan/2026 23:46:32] "POST /api/v1/amenities/ HTTP/1.1" 201 -
+127.0.0.1 - - [13/Jan/2026 23:46:32] "POST /api/v1/amenities/ HTTP/1.1" 201 -
+127.0.0.1 - - [13/Jan/2026 23:46:32] "POST /api/v1/users/ HTTP/1.1" 201 -
+127.0.0.1 - - [13/Jan/2026 23:46:33] "POST /api/v1/users/ HTTP/1.1" 201 -
+127.0.0.1 - - [13/Jan/2026 23:46:33] "POST /api/v1/places/ HTTP/1.1" 201 -
+127.0.0.1 - - [13/Jan/2026 23:46:33] "GET /api/v1/places/1ea9b0cd-a368-4bfc-ab01-1f13be3dad89 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jan/2026 23:47:46] "POST /api/v1/reviews/ HTTP/1.1" 400 -
+127.0.0.1 - - [13/Jan/2026 23:47:46] "GET /api/v1/reviews/ HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jan/2026 23:47:47] "GET /api/v1/places/1ea9b0cd-a368-4bfc-ab01-1f13be3dad89/reviews HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jan/2026 23:47:47] "PUT /api/v1/reviews/ HTTP/1.1" 405 -
+127.0.0.1 - - [13/Jan/2026 23:47:47] "DELETE /api/v1/reviews/ HTTP/1.1" 405 -
+127.0.0.1 - - [13/Jan/2026 23:47:48] "GET /api/v1/reviews/ HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jan/2026 23:47:54] "POST /api/v1/reviews/ HTTP/1.1" 201 -
+127.0.0.1 - - [13/Jan/2026 23:52:16] "PUT /api/v1/reviews/886a0576-488e-48a8-9e1c-f8ff2b5069ee HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jan/2026 23:52:17] "GET /api/v1/reviews/886a0576-488e-48a8-9e1c-f8ff2b5069ee HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jan/2026 23:52:17] "DELETE /api/v1/reviews/886a0576-488e-48a8-9e1c-f8ff2b5069ee HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jan/2026 23:52:17] "GET /api/v1/reviews/886a0576-488e-48a8-9e1c-f8ff2b5069ee HTTP/1.1" 404 -
+127.0.0.1 - - [13/Jan/2026 23:53:38] "GET /api/v1/doc/ HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jan/2026 23:53:38] "GET /swaggerui/droid-sans.css HTTP/1.1" 304 -
+127.0.0.1 - - [13/Jan/2026 23:53:38] "GET /swaggerui/swagger-ui.css HTTP/1.1" 304 -
+127.0.0.1 - - [13/Jan/2026 23:53:38] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 304 -
+127.0.0.1 - - [13/Jan/2026 23:53:38] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+127.0.0.1 - - [13/Jan/2026 23:53:39] "GET /api/v1/swagger.json HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jan/2026 23:53:39] "GET /swaggerui/favicon-32x32.png HTTP/1.1" 304 -
+127.0.0.1 - - [13/Jan/2026 23:54:21] "POST /api/v1/users/ HTTP/1.1" 201 -
+127.0.0.1 - - [14/Jan/2026 00:00:01] "GET /api/v1/users/sama HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jan/2026 00:00:33] "GET /api/v1/users/ HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jan/2026 00:01:07] "GET /api/v1/places/ HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jan/2026 11:30:19] "GET /api/v1/doc/ HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jan/2026 11:30:19] "GET /swaggerui/droid-sans.css HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jan/2026 11:30:19] "GET /swaggerui/swagger-ui.css HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jan/2026 11:30:19] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jan/2026 11:30:19] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jan/2026 11:30:19] "GET /api/v1/swagger.json HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jan/2026 11:30:19] "GET /swaggerui/favicon-32x32.png HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jan/2026 12:00:05] "GET /alogin HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jan/2026 12:01:01] "GET /login HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jan/2026 12:01:05] "GET /login HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jan/2026 12:01:11] "GET / HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jan/2026 12:01:20] "GET /api/v1/swagger.json HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jan/2026 12:06:57] "GET /login.html HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jan/2026 12:10:07] "GET /api/v1/users/ HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jan/2026 12:10:29] "GET /api/v1/users/md HTTP/1.1" 404 -
+127.0.0.1 - - [19/Jan/2026 15:32:38] "GET / HTTP/1.1" 404 -
+127.0.0.1 - - [19/Jan/2026 15:34:34] "OPTIONS /api/v1/places/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 15:34:41] "OPTIONS /api/v1/places/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 15:34:47] "OPTIONS /api/v1/places/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 15:35:01] "OPTIONS /api/v1/places/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 15:35:17] "OPTIONS /api/v1/places/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 15:35:21] "OPTIONS /api/v1/places/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 15:35:26] "OPTIONS /api/v1/places/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 15:36:02] "OPTIONS /api/v1/places/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 15:36:27] "OPTIONS /api/v1/places/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 15:36:35] "OPTIONS /api/v1/places/xxx HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 15:37:31] "GET /api/v1/places/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 15:37:47] "GET / HTTP/1.1" 404 -
+127.0.0.1 - - [19/Jan/2026 15:39:33] "GET /api/v1/places/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 15:39:43] "GET /api/v1/places/1ea9b0cd-a368-4bfc-ab01-1f13be3dad89 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 15:43:40] "GET /api/v1/places/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 15:44:23] "GET /api/v1/places/1ea9b0cd-a368-4bfc-ab01-1f13be3dad89 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 15:56:16] "GET /api/v1/places/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 15:58:48] "GET /api/v1/places/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 15:59:45] "GET /api/v1/places/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 16:01:03] "GET /api/v1/places/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 16:01:13] "OPTIONS /api/v1/places/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 16:01:22] "OPTIONS /api/v1/auth/login HTTP/1.1" 404 -
+127.0.0.1 - - [19/Jan/2026 16:01:28] "OPTIONS /api/v1/places/ HTTP/1.1" 200 -
+127.0.0.1 - - [20/Jan/2026 15:08:54] "GET /api/v1/doc/ HTTP/1.1" 200 -
+127.0.0.1 - - [20/Jan/2026 15:08:54] "GET /swaggerui/droid-sans.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Jan/2026 15:08:54] "GET /swaggerui/swagger-ui.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Jan/2026 15:08:55] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Jan/2026 15:08:55] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Jan/2026 15:08:55] "GET /api/v1/swagger.json HTTP/1.1" 200 -
+127.0.0.1 - - [20/Jan/2026 15:08:55] "GET /swaggerui/favicon-32x32.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Jan/2026 15:09:42] "GET /api/v1/reviews/ HTTP/1.1" 200 -
+127.0.0.1 - - [20/Jan/2026 15:10:03] "POST /api/v1/reviews/ HTTP/1.1" 400 -
+127.0.0.1 - - [20/Jan/2026 15:23:22] "GET /api/v1/doc/ HTTP/1.1" 200 -
+127.0.0.1 - - [20/Jan/2026 15:23:22] "GET /swaggerui/droid-sans.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Jan/2026 15:23:22] "GET /swaggerui/swagger-ui.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Jan/2026 15:23:22] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Jan/2026 15:23:22] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+127.0.0.1 - - [20/Jan/2026 15:23:23] "GET /api/v1/swagger.json HTTP/1.1" 200 -
+127.0.0.1 - - [20/Jan/2026 15:23:23] "GET /swaggerui/favicon-32x32.png HTTP/1.1" 304 -
+127.0.0.1 - - [20/Jan/2026 15:24:22] "GET /api/v1/swagger.json HTTP/1.1" 200 -
+127.0.0.1 - - [20/Jan/2026 15:37:21] "GET / HTTP/1.1" 404 -
+ * Detected change in 'C:\\Users\\Bonya\\holbertonschool-higher_level_programming-1\\holbertonschool-hbnb\\part2\\app\\models\\base_model.py', reloading
+
+==================================================
+HBnB API Server
+==================================================
+
+Available routes:
+  /api/v1/ -> api.root [GET]
+  /api/v1/ -> api.api_root [GET]
+  /api/v1/amenities/ -> api.amenities_amenity_list [GET,POST]
+  /api/v1/amenities/ -> api.amenities_amenity_list_2 [GET,POST]
+  /api/v1/amenities/<string:amenity_id> -> api.amenities_amenity_resource [GET,PUT]
+  /api/v1/amenities/<string:amenity_id> -> api.amenities_amenity_resource_2 [GET,PUT]
+  /api/v1/doc/ -> api.doc [GET]
+  /api/v1/places/ -> api.places_place_list [GET,POST]
+  /api/v1/places/ -> api.places_place_list_2 [GET,POST]
+  /api/v1/places/<place_id> -> api.places_place_resource [GET,PUT]
+  /api/v1/places/<place_id> -> api.places_place_resource_2 [GET,PUT]
+  /api/v1/places/<place_id>/reviews -> api.places_place_review_list [GET]
+  /api/v1/places/<place_id>/reviews -> api.places_place_review_list_2 [GET]
+  /api/v1/reviews/ -> api.reviews_review_list [GET,POST]
+  /api/v1/reviews/ -> api.reviews_review_list_2 [GET,POST]
+  /api/v1/reviews/<review_id> -> api.reviews_review_resource [DELETE,GET,PUT]
+  /api/v1/reviews/<review_id> -> api.reviews_review_resource_2 [DELETE,GET,PUT]
+  /api/v1/swagger.json -> api.specs [GET]
+  /api/v1/users/ -> api.users_user_list [GET,POST]
+  /api/v1/users/ -> api.users_user_list_2 [GET,POST]
+  /api/v1/users/<user_id> -> api.users_user_resource [GET,PUT]
+  /api/v1/users/<user_id> -> api.users_user_resource_2 [GET,PUT]
+  /static/<path:filename> -> static [GET]
+  /swaggerui/<path:filename> -> restx_doc.static [GET]
+
+Important URLs (clickable in terminal):
+  Swagger UI:    http://127.0.0.1:5000/ (redirige vers /api/v1/doc/
+  Users API:     http://127.0.0.1:5000/api/v1/users
+  Amenities API: http://127.0.0.1:5000/api/v1/amenities
+  Health check:  http://127.0.0.1:5000/health
+
+Configuration:
+  Debug mode: True
+  Host: 0.0.0.0 (accessible from network)
+  Port: 5000
+
+==================================================
+Starting server... (Press Ctrl+C to stop)
+==================================================
+
