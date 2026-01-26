@@ -1,5 +1,3 @@
-// Script that updates the text color of the header element to red (#FF0000)
+// Task 0: Color Me
+// Change the header text color to red using document.querySelector
 document.querySelector('header').style.color = '#FF0000';
-
-
-

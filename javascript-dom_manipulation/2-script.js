@@ -1,10 +1,5 @@
-// Script that adds the class red to the header element when the user clicks on the tag with id red_header
-document.addEventListener('DOMContentLoaded', function () {
-  const redHeader = document.getElementById('red_header');
-  redHeader.addEventListener('click', function () {
-    document.querySelector('header').classList.add('red');
-  });
+// Task 2: Add .red class
+// Add class 'red' to header when clicking on #red_header
+document.getElementById('red_header').addEventListener('click', function () {
+  document.querySelector('header').classList.add('red');
 });
-
-
-

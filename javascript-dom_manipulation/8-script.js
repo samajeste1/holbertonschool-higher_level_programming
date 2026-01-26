@@ -1,15 +1,10 @@
-// Script that fetches from https://hellosalut.stefanbohacek.com/?lang=fr and displays the value of hello
-// This script must work when imported from the <head> tag
+// Task 8: Say Hello!
+// Fetch translation of "hello" in French and display in #hello
+// Script works when imported from <head> tag
 document.addEventListener('DOMContentLoaded', function () {
   fetch('https://hellosalut.stefanbohacek.com/?lang=fr')
     .then(response => response.json())
     .then(data => {
       document.getElementById('hello').textContent = data.hello;
-    })
-    .catch(error => {
-      console.error('Error:', error);
     });
 });
-
-
-

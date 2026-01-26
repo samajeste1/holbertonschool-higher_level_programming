@@ -1,13 +1,7 @@
-// Script that adds a li element to a list when the user clicks on the element with id add_item
-document.addEventListener('DOMContentLoaded', function () {
-  const addItem = document.getElementById('add_item');
-  addItem.addEventListener('click', function () {
-    const myList = document.querySelector('.my_list');
-    const newItem = document.createElement('li');
-    newItem.textContent = 'Item';
-    myList.appendChild(newItem);
-  });
+// Task 4: List of elements
+// Add a new li element to the list when clicking #add_item
+document.getElementById('add_item').addEventListener('click', function () {
+  const newItem = document.createElement('li');
+  newItem.textContent = 'Item';
+  document.querySelector('.my_list').appendChild(newItem);
 });
-
-
-

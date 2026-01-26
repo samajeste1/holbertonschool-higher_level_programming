@@ -1,4 +1,5 @@
-// Script that fetches and lists the title for all movies using the Star Wars API
+// Task 7: Star Wars movies
+// Fetch all movie titles from SWAPI and list them in #list_movies
 fetch('https://swapi-api.hbtn.io/api/films/?format=json')
   .then(response => response.json())
   .then(data => {
@@ -8,10 +9,4 @@ fetch('https://swapi-api.hbtn.io/api/films/?format=json')
       li.textContent = movie.title;
       listMovies.appendChild(li);
     });
-  })
-  .catch(error => {
-    console.error('Error:', error);
   });
-
-
-
