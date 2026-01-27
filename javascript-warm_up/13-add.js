@@ -1,10 +1,4 @@
 #!/usr/bin/node
-// Function that returns the addition of 2 integers
-function add (a, b) {
+exports.add = function (a, b) {
   return a + b;
-}
-
-module.exports = { add };
-
-
-
+};

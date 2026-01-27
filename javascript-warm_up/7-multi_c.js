@@ -1,7 +1,5 @@
 #!/usr/bin/node
-// Script that prints x times "C is fun"
-const x = parseInt(process.argv[2]);
-
+const x = parseInt(process.argv[2], 10);
 if (isNaN(x)) {
   console.log('Missing number of occurrences');
 } else {
@@ -9,6 +7,3 @@ if (isNaN(x)) {
     console.log('C is fun');
   }
 }
-
-
-
