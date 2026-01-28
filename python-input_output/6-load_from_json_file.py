@@ -3,6 +3,7 @@
 
 import json
 
+
 def load_from_json_file(filename):
     """Return the Python object represented in JSON file filename.
 

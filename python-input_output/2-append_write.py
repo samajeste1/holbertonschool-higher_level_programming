@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""Append text to a UTF-8 file and return number of characters added."""
+"""Append text to a UTF-8 file and return number of characters."""
+
 
 def append_write(filename="", text=""):
-    """Append text to filename (create file if needed), return number of chars added.
+    """Append text to filename (create if needed).
 
     Args:
         filename (str): path to file

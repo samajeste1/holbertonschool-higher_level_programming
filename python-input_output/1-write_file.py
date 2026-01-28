@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""Write text to a UTF-8 file and return number of characters written."""
+"""Write text to a UTF-8 file and return number of characters."""
+
 
 def write_file(filename="", text=""):
-    """Write text to filename (UTF-8), overwrite if exists, return number of chars.
+    """Write text to filename (UTF-8), overwrite if exists.
 
     Args:
         filename (str): path to file

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Student class that can be represented as JSON-friendly dict."""
 
+
 class Student:
     """Represents a student with first_name, last_name and age."""
 

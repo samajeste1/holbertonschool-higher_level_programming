@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Student class with optional attrs filtering for JSON representation."""
 
+
 class Student:
     """Represents a student with first_name, last_name and age."""
 
@@ -11,12 +12,18 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        """Return dict representation. If attrs is a list of strings, only include them.
+        """Return dict representation.
+
+        If attrs is a list of strings, only include those attributes.
 
         Args:
             attrs (list|None): list of attribute names to include
         """
-        data = {'first_name': self.first_name, 'last_name': self.last_name, 'age': self.age}
+        data = {
+            'first_name': self.first_name,
+            'last_name': self.last_name,
+            'age': self.age
+        }
         if isinstance(attrs, list):
             filtered = {}
             for key in attrs:
