@@ -36,9 +36,18 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
         elif self.path == "/data":
             self._send_json(SAMPLE)
         elif self.path == "/status":
-            self._send_json({"status": "OK"})
+            text = "OK"
+            data = text.encode("utf-8")
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain; charset=utf-8")
+            self.send_header("Content-Length", str(len(data)))
+            self.end_headers()
+            self.wfile.write(data)
         else:
-            self._send_json({"error": "Endpoint not found"}, status=404)
+            self.send_response(404)
+            self.send_header("Content-Type", "text/plain; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(b"404 Not Found")
 
     def log_message(self, format, *args):
         # avoid noisy console logging in tests; keep useful for debugging if needed
