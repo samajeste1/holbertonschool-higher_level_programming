@@ -1,6 +1,33 @@
-Simple doctest for MyList.print_sorted
+Doctests for MyList class
 
+Test instantiation:
 >>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+
+Test inherits from list:
+>>> issubclass(MyList, list)
+True
+
+Test __str__:
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+
+Test append():
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> print(my_list)
+[1]
+
+Test print_sorted() with sorted append:
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.print_sorted()
+[1, 2, 3]
+
+Test print_sorted() with not sorted append:
 >>> my_list = MyList()
 >>> my_list.append(3)
 >>> my_list.append(1)
@@ -9,3 +36,25 @@ Simple doctest for MyList.print_sorted
 [3, 1, 2]
 >>> my_list.print_sorted()
 [1, 2, 3]
+
+Test print_sorted() with no sorted append with negative number:
+>>> my_list = MyList()
+>>> my_list.append(3)
+>>> my_list.append(-1)
+>>> my_list.append(2)
+>>> my_list.print_sorted()
+[-1, 2, 3]
+
+Test print_sorted() with empty list:
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
+Test print_sorted() returns a new list:
+>>> my_list = MyList()
+>>> my_list.append(3)
+>>> my_list.append(1)
+>>> my_list.print_sorted()
+[1, 3]
+>>> print(my_list)
+[3, 1]
