@@ -27,7 +27,8 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     # Execute SQL query using parameterized query (safe from SQL injection)
-    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC", (state_name,))
+    cur.execute("SELECT * FROM states WHERE name = %s \
+ORDER BY id ASC", (state_name,))
 
     # Fetch all rows
     query_rows = cur.fetchall()

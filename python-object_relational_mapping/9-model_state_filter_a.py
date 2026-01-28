@@ -16,7 +16,8 @@ if __name__ == "__main__":
 
     # Create engine
     engine = create_engine(
-        'mysql+mysqldb://{}:{}@localhost/{}'.format(username, password, database),
+        'mysql+mysqldb://{}:{}@localhost/{}'.format(
+            username, password, database),
         pool_pre_ping=True
     )
 
@@ -25,7 +26,8 @@ if __name__ == "__main__":
     session = Session()
 
     # Query states containing 'a' ordered by id
-    states = session.query(State).filter(State.name.like('%a%')).order_by(State.id).all()
+    states = session.query(State).filter(
+        State.name.like('%a%')).order_by(State.id).all()
 
     # Display results
     for state in states:

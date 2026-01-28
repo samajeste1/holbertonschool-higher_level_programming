@@ -15,7 +15,8 @@ if __name__ == "__main__":
 
     # Create engine
     engine = create_engine(
-        'mysql+mysqldb://{}:{}@localhost/{}'.format(username, password, database),
+        'mysql+mysqldb://{}:{}@localhost/{}'.format(
+            username, password, database),
         pool_pre_ping=True
     )
 
